@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head'); -%>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('navigation'); -%>
+    </header>
+    
+    <main>
+        <div class="jumbotron">
+            <% products.forEach(function(product) { %>
+              <h1>Tuote <%= product.nimi %> - Hinta <%= product.hinta %></h1>
+              <p><%= product.lisatiedot %></p>
+            <% }); %>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('footer'); -%>
+    </footer>
+</body>
+</html>
