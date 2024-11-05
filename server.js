@@ -13,5 +13,5 @@ app.use('/static', express.static('public'))
 app.use(require('./routes/routes'))
 
 app.listen(port, function () {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server is running on http://localhost:${port}`)
 })
