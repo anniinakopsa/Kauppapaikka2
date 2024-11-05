@@ -12,12 +12,12 @@
     <main>
         <div class="jumbotron">
             <h1>Admin tuotteet</h1>
-            <a href="/admin/tuote/lisaa" class="btn btn-success">Lisää uusi tuote</a>
+            <a href="/admin/tuote" class="btn btn-success">Lisää uusi tuote</a>
             <ul>
               <% products.forEach(function(product) { %>
                 <li><a href="/tuote/<%= product.tuoteid %>"><%= product.nimi %> - <%= product.hinta %></a></li>
-                <a href="/adminTuoteMuokkaa/<%= product.tuoteid %>" class="btn btn-primary">Muokkaa</a>
-                <a href="/adminTuotePoista/<%= product.tuoteid %>" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa tämän tuotteen?')">Poista</a>
+                <a href="/admin/tuote/muokkaa/<%= product.tuoteid %>" class="btn btn-primary">Muokkaa</a>
+                <a href="/admin/tuote/poista/<%= product.tuoteid %>" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa tämän tuotteen?')">Poista</a>
                 <% }); %>
             </ul>
         </div>
