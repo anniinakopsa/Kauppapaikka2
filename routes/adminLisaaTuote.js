@@ -2,19 +2,20 @@ let Tuote = require('../model/tuote');
 let Valokuva = require('../model/tuote');
 
 module.exports = (req, res) => {
+    console.log(req)
     let BodyValokuvat = [];
-    if (req.body.valokuvat !== undefined) {
-        BodyValokuvat = req.body.valokuvat.array.forEach(BodyValokuva => new Valokuva({
+    if (req.query.valokuvat !== undefined) {
+        BodyValokuvat = req.query.valokuvat.array.forEach(BodyValokuva => new Valokuva({
             url: BodyValokuva.url,
             kuvateksti: BodyValokuva.kuvateksti
         }));
     }
 
     let UusiTuote = new Tuote({
-        tuoteid: req.body.tuoteid,
-        nimi: req.body.nimi,
-        hinta: req.body.hinta,
-        lisatiedot: req.body.lisatiedot,
+        tuoteid: req.query.tuoteid,
+        nimi: req.query.nimi,
+        hinta: req.query.hinta,
+        lisatiedot: req.query.lisatiedot,
         valokuvat: [BodyValokuvat]
     });
 
