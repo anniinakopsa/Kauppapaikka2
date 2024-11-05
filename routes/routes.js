@@ -15,7 +15,7 @@ router.get('/yhteystiedot', yhteystiedot)
 router.get('/tuotteet', tuotteet)
 router.get('/tuote/:id', tuote)
 router.get('/admin', adminTuotteet)
-router.get('/uusiTuote', uusiTuote)
+router.get('/admin/tuote/lisaa', uusiTuote)
 router.post('/tuote', adminLisaaTuote)
 router.get('*', eiloydy)
 
