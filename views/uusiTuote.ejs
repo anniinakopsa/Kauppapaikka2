@@ -15,6 +15,11 @@
                 <%= successMessage %>
             </div>
         <% } %>
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <div class="alert alert-danger">
+                <%= errorMessage %>
+            </div>
+        <% } %>
         <div class="product-form">
             <h2>Lisää uusi tuote</h2>
             <form action="/admin/tuote/lisaa" method="GET">
