@@ -1,11 +1,14 @@
-module.exports = (req, res) => {
-  let tuotteet = [
-    { name: 'Läppäri', price: 3 },
-    { name: 'Pöytäkone', price: 5 },
-    { name: 'Puhelin', price: 10 }
-  ];
+let Tuote = require('../model/tuote')
 
-  res.render('../views/tuotteet', {
-    products: tuotteet
-  });
+module.exports = (req, res) => {
+
+  Tuote.find()
+  .then(tuote => {
+    console.log(tuote)
+    res.render('../views/tuotteet', {products: tuote})
+  })
+  .catch(err => {
+    console.log(err.message)
+    res.status(500).send({ message: err.message || "Error" })
+  })
 };
