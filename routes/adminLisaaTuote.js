@@ -20,9 +20,9 @@ module.exports = (req, res) => {
     });
 
     UusiTuote
-        .save(UusiTuote)
+        .save()
         .then(data => {
-            res.send(data)
+            res.redirect('/admin/tuote?successMessage=Tuote%20on%20lisätty%20onnistuneesti'); // Uudelleenohjaus onnistuneen tallennuksen jälkeen viestin kanssa
         })
         .catch(err => {
             res.status(500).send({

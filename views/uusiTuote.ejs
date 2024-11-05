@@ -10,6 +10,11 @@
     </header>
     
     <main>
+        <% if (typeof successMessage !== 'undefined') { %>
+            <div class="alert alert-success">
+                <%= successMessage %>
+            </div>
+        <% } %>
         <div class="product-form">
             <h2>Lisää uusi tuote</h2>
             <form action="/admin/tuote/lisaa" method="GET">
