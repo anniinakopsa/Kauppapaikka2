@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head'); -%>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('navigation'); -%>
+    </header>
+    
+    <main>
+        <%- include('message'); -%>
+        <div class="product-form">
+            <h2>Muokkaa tuotetta</h2>
+            <form action="/admin/tuote/muokkaa/<%= product.tuoteid %>" method="GET">
+                <div class="form-group">
+                    <label for="tuoteid">Tuote ID</label>
+                    <input type="text" class="form-control" id="tuoteid" name="tuoteid" value="<%= product.tuoteid %>" readonly>
+                  </div>
+                <div class="form-group">
+                    <label for="nimi">Nimi</label>
+                    <input type="text" class="form-control" id="nimi" name="nimi" value="<%= product.nimi %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="hinta">Hinta</label>
+                    <input type="number" class="form-control" id="hinta" name="hinta" value="<%= product.hinta %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="lisatiedot">Lisätiedot</label>
+                    <textarea class="form-control" id="lisatiedot" name="lisatiedot" rows="3"><%= product.lisatiedot %></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Muokkaa tuotetta</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('footer'); -%>
+    </footer>
+</body>
+</html>
